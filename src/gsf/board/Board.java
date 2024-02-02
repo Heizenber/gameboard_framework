@@ -1,13 +1,12 @@
 package gsf.board;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import gsf.unit.Unit;
 
 public class Board {
     private int width, height;
-    private List tiles;
+    private List<ArrayList<ArrayList<Tile>>> tiles;
 
     public Board(int width, int height) {
         this.width = width;
@@ -16,9 +15,9 @@ public class Board {
     }
 
     private void initialize() {
-        tiles = new ArrayList(width);
+        tiles = new ArrayList<ArrayList<ArrayList<Tile>>>(width);
         for (int i = 0; i < width; i++) {
-            tiles.add(i, new ArrayList(height));
+            tiles.add(i, new ArrayList<ArrayList<Tile>>(height));
             for (int j = 0; j < height; j++) {
                 ((ArrayList) tiles.get(i)).add(j, new Tile());
             }
