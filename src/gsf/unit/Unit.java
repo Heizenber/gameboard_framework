@@ -53,4 +53,8 @@ public class Unit {
         }
         properties.put(property, value);
     }
+
+    public Object getProperty(String property) {
+        return properties.get(property);
+    }
 }
